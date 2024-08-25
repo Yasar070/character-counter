@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character counter</title>
+</head>
+<style>
+    #container{
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+        background-color: steelblue;
+        height: 400px;
+        flex-wrap: wrap;
+    #textbox{
+        height: 200px;
+        width: 400px;
+      border: 5px solid gray;
+    }
+    #textbox:focus{
+        outline: none;
+    }
+    #spanbox{
+        display: none;
+    }
+    #spancount{
+        font-size: large;
+        
+    }
+
+</style>
+<body>
+    <div id="container">
+        <h1>Type your text here</h1>
+        <textarea id="textbox" maxlength="200" placeholder="Type your message"></textarea><br>
+      
+        <span id="spancount">0/200</span>
+        <script>
+            let textboxInput=document.getElementById("textbox")
+            let contain=document.getElementById("container")
+            let spanInput=document.getElementById("spancount")
+     
+            textboxInput.addEventListener("keypress",countcheck)
+            countcheck()
+         
+            function countcheck(){
+              
+                let textcount=textboxInput.value.length;
+                spanInput.textContent = `${textcount}/200`;
+            
+            }
+
+                
+           
+
+        </script>
+    </div>
+   
+</body>
+</html>
